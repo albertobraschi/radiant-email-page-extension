@@ -59,6 +59,13 @@ module EmailPageTags
     end
   end
   
+  desc %{ Sets the scope of the page to that of the page being sent.}
+  tag "email_page:sending_page" do |tag|
+    tag.locals.page = Page.find(tag.locals.page.page_id_to_email)
+    tag.expand
+  end
+  
+  
   tag "email_page:page_title" do |tag|
     Page.find(tag.locals.page.page_id_to_email).title
   end
