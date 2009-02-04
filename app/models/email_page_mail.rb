@@ -58,7 +58,7 @@ class EmailPageMail
       :recipients => recipients,
       :from => from,
       :subject => subject,
-      :headers => { 'Sender' => sender, 'Return-Path' => sender },
+      # :headers => { 'Sender' => sender, 'Return-Path' => sender },
       :plain_body => plain_body,
       :html_body => html_body
     )
